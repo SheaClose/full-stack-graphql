@@ -1,0 +1,18 @@
+type Query {
+  message: String!
+  products: [Product]!
+  productsCheaperThan(price: String): [Product]!
+  user: User
+}
+
+type Product {
+  id: ID
+  name: String
+  price: Float
+  color: String
+}
+
+type Mutation {
+  addProduct(id: ID, name: String, price: Float, color: String): [Product!]!
+  deleteProduct(id: ID): ID
+}
